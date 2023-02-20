@@ -37,8 +37,7 @@ function validateFirstName() {
   const firstNameInput = document.querySelector("#first");
   if (firstNameInput.value.length < 2) {
     return false;
-  }
-  else {
+  } else {
     return true;
   }
 }
@@ -47,8 +46,7 @@ function validateLastName() {
   const firstNameInput = document.querySelector("#last");
   if (firstNameInput.value.length > 1) {
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
@@ -56,31 +54,28 @@ function validateLastName() {
 function emailValidation() {
   const emailInput = document.querySelector("#email");
   const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (regexEmail.test(emailInput.value)) {
-      return true;
-  }
-    else {
-      return false;
+  if (regexEmail.test(emailInput.value)) {
+    return true;
+  } else {
+    return false;
   }
 }
 
 function birthdateValidation() {
-  const regexDate = /^\d{4}[./-]\d{2}[./-]\d{2}$/
+  const regexDate = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
   const birthdateInput = document.querySelector("#birthdate");
   if (regexDate.test(birthdateInput.value)) {
     return true;
-}
-  else {
+  } else {
     return false;
-}
+  }
 }
 
 function quantityValidation() {
   const quantityInput = document.querySelector("#quantity");
   if (quantityInput.value > 0) {
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
@@ -90,10 +85,9 @@ function locationValidation() {
   const radioBtnNodeList = document.querySelectorAll("#location > input");
   const radioBtnList = Array.from(radioBtnNodeList);
 
-  radioBtnList.forEach(button => {
-    if (button.checked == true)
-      hasOneChecked = true;
-  })
+  radioBtnList.forEach((button) => {
+    if (button.checked == true) hasOneChecked = true;
+  });
   return hasOneChecked;
 }
 
@@ -106,12 +100,10 @@ function displayError(targetInput) {
   targetInput.classList.toggle("border-red", true);
   let parentContainer = targetInput.parentNode;
   let errorContainer = parentContainer.querySelector(".error-msg");
-  errorContainer.style = "display:block;"
+  errorContainer.style = "display:block;";
 }
 
-
 function validateForm(event) {
-
   event.preventDefault();
 
   const firstNameInput = document.querySelector("#first");
@@ -152,10 +144,10 @@ function validateForm(event) {
     displayError(agreementInput);
   }
   if (validationOk) {
-
     // Form sent and new page with success message appear
 
-    const containerSuccessPage = document.querySelector(".modal-body")
+    const containerSuccessPage = document.querySelector(".modal-body");
+
     // containerSuccessPage.innerHTML = null;
     // const successTextContainer = document.createElement("div");
     // successTextContainer.classList.add("text-success");
@@ -164,28 +156,23 @@ function validateForm(event) {
     // successText.innerText = "Merci pour votre inscription";
     // successTextContainer.appendChild(successText);
 
-    
-    const successMessage = '<div class="text-success"><p>Merci pour votre inscription</p></div><div><input class="btn-close-success" type="button" value="Fermer"></div>';
+    const successMessage =
+      '<div class="text-success"><p>Merci pour votre inscription</p></div><div><input class="btn-close-success" type="button" value="Fermer"></div>';
     containerSuccessPage.innerHTML = successMessage;
-    
+
     const btnCloseSucessPage = document.querySelector(".btn-close-success");
-    btnCloseSucessPage.addEventListener("click", () =>{
+    btnCloseSucessPage.addEventListener("click", () => {
       const modalbg = document.querySelector(".bground");
       modalbg.style.display = "none";
+    });
 
-    })
-
-
-    // const inputSuccessBtnClose = document.createElement("button");
-    // inputSuccessBtnClose.classList.add(".btn-close")
-    // containerSuccessPage.appendChild(inputSuccessBtnClose);
-    // // btnCloseSucessPage.style.display = "block";
-    // console.log(btnCloseSucessPage)
-    
-  
-    }; 
+//     const inputSuccessBtnClose = document.createElement("button");
+//     inputSuccessBtnClose.classList.add(".btn-close")
+//     containerSuccessPage.appendChild(inputSuccessBtnClose);
+//     btnCloseSucessPage.style.display = "block";
+//     console.log(btnCloseSucessPage)
+  }
 }
-
 
 const form = document.querySelector("form");
 form.addEventListener("submit", validateForm);
@@ -196,13 +183,12 @@ function firstNameActiveValidation() {
     firstNameInput.classList.toggle("border-red", false);
     let parentContainer = firstNameInput.parentNode;
     let errorContainer = parentContainer.querySelector(".error-msg");
-    errorContainer.style = "display:none;"
+    errorContainer.style = "display:none;";
   }
 }
 
 const firstNameInput = document.querySelector("#first");
 firstNameInput.addEventListener("keyup", firstNameActiveValidation);
-
 
 function lastNameActiveValidation() {
   const lastNameInput = document.querySelector("#last");
@@ -210,13 +196,12 @@ function lastNameActiveValidation() {
     lastNameInput.classList.toggle("border-red", false);
     let parentContainer = lastNameInput.parentNode;
     let errorContainer = parentContainer.querySelector(".error-msg");
-    errorContainer.style = "display:none;"
+    errorContainer.style = "display:none;";
   }
 }
 
 const lastNameInput = document.querySelector("#last");
 lastNameInput.addEventListener("keyup", lastNameActiveValidation);
-
 
 function emailActiveValidation() {
   const emailInput = document.querySelector("#email");
@@ -224,13 +209,12 @@ function emailActiveValidation() {
     emailInput.classList.toggle("border-red", false);
     let parentContainer = emailInput.parentNode;
     let errorContainer = parentContainer.querySelector(".error-msg");
-    errorContainer.style = "display:none;"
+    errorContainer.style = "display:none;";
   }
 }
 
 const emailInput = document.querySelector("#email");
 emailInput.addEventListener("keyup", emailActiveValidation);
-
 
 function birthdateActiveValidation() {
   const birthdateInput = document.querySelector("#birthdate");
@@ -238,13 +222,12 @@ function birthdateActiveValidation() {
     birthdateInput.classList.toggle("border-red", false);
     let parentContainer = birthdateInput.parentNode;
     let errorContainer = parentContainer.querySelector(".error-msg");
-    errorContainer.style = "display:none;"
+    errorContainer.style = "display:none;";
   }
 }
 
 const birthdateInput = document.querySelector("#birthdate");
 birthdateInput.addEventListener("input", birthdateActiveValidation);
-
 
 function quantityActiveValidation() {
   const quantityInput = document.querySelector("#quantity");
@@ -252,29 +235,27 @@ function quantityActiveValidation() {
     quantityInput.classList.toggle("border-red", false);
     let parentContainer = quantityInput.parentNode;
     let errorContainer = parentContainer.querySelector(".error-msg");
-    errorContainer.style = "display:none;"
+    errorContainer.style = "display:none;";
   }
 }
 
 const quantityInput = document.querySelector("#quantity");
 quantityInput.addEventListener("change", quantityActiveValidation);
 
-
 function locationActiveValidation() {
   const locationContainer = document.querySelector("#location6");
- 
+
   if (locationValidation()) {
     locationContainer.classList.toggle("border-red", false);
     let parentContainer = locationContainer.parentNode;
     let errorContainer = parentContainer.querySelector(".error-msg");
-    
-    errorContainer.style = "display:none;"
+
+    errorContainer.style = "display:none;";
   }
 }
 
 const locationContainer = document.querySelector("#location");
 locationContainer.addEventListener("change", locationActiveValidation);
-
 
 function checkboxActiveValidation() {
   const agreementInput = document.querySelector("#checkbox1");
@@ -282,10 +263,9 @@ function checkboxActiveValidation() {
     agreementInput.classList.toggle("border-red", false);
     let parentContainer = agreementInput.parentNode;
     let errorContainer = parentContainer.querySelector(".error-msg");
-    errorContainer.style = "display:none;"
+    errorContainer.style = "display:none;";
   }
 }
 
 const agreementInput = document.querySelector("#checkbox1");
 agreementInput.addEventListener("change", checkboxActiveValidation);
-
