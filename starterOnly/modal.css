@@ -194,12 +194,15 @@ label {
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
+  cursor: pointer;
 }
 input {
   padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
 }
+
+
 .text-control {
   margin: 0;
   padding: 8px;
@@ -208,6 +211,19 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
+
+.error{
+  font-size: 14px;
+  color: #ff0000;
+
+}
+
+.error-msg{
+  display : none;
+  }
+
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -296,6 +312,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
+
 .close {
   position: absolute;
   right: 15px;
@@ -525,5 +542,57 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+/*Red border when input unvalid*/
+.border-red {
+  border: 2px solid red;
+}
+
+/*Success page when form sent*/
+.text-success{
+  width: auto;
+  height: 710px;
+}
+
+.text-success p{
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+} 
+
+
+.btn-close-success{
+  display: block;
+  background: #fe142f;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+
+
+
+
+
+.btn-close-success-hidden{
+  display: none;
+  background: #fe142f;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  
 }
 
