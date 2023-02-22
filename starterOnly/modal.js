@@ -148,14 +148,6 @@ function validateForm(event) {
 
     const containerSuccessPage = document.querySelector(".modal-body");
 
-    // containerSuccessPage.innerHTML = null;
-    // const successTextContainer = document.createElement("div");
-    // successTextContainer.classList.add("text-success");
-    // containerSuccessPage.appendChild(successTextContainer);
-    // const successText = document.createElement("p");
-    // successText.innerText = "Merci pour votre inscription";
-    // successTextContainer.appendChild(successText);
-
     const successMessage =
       '<div class="text-success"><p>Merci pour votre inscription</p></div><div><input class="btn-close-success" type="button" value="Fermer"></div>';
     containerSuccessPage.innerHTML = successMessage;
@@ -165,12 +157,6 @@ function validateForm(event) {
       const modalbg = document.querySelector(".bground");
       modalbg.style.display = "none";
     });
-
-//     const inputSuccessBtnClose = document.createElement("button");
-//     inputSuccessBtnClose.classList.add(".btn-close")
-//     containerSuccessPage.appendChild(inputSuccessBtnClose);
-//     btnCloseSucessPage.style.display = "block";
-//     console.log(btnCloseSucessPage)
   }
 }
 
